@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -e
+
+if [ $# -lt 1 ]; then
+  echo "Using: angb <arquivo>"
+  exit 1
+fi
+
+FILE="$1"
+
+if [ ! -f "$FILE" ]; then
+  echo "File not found: $FILE"
+  exit 1
+fi
+
+ABS_PATH="$(realpath "$FILE")"
+DIR="$(dirname "$ABS_PATH")"
+BASENAME="$(basename "$ABS_PATH")"
+
+docker run --rm \
+  -v "$DIR:/data:ro" \
+  angb-analyzer \
+  "/data/$BASENAME"
