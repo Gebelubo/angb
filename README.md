@@ -166,3 +166,8 @@ DISCLAIMER
 ANGB is a static analysis tool and does not guarantee detection of all malware.
 It should be used as an additional safety layer, not as a replacement for good security practices.
 
+------------------------------------------------------------
+LICENSE
+------------------------------------------------------------
+
+MIT License
